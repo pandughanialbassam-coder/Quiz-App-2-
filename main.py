@@ -40,7 +40,7 @@ def index():
 
 
 # === TEST UTILITY START - TEST PAGE ===
-def question_form(questions)
+def question_form(questions):
     answer_list = [
         question[2],
         question[3],
@@ -67,7 +67,7 @@ def save_answers():
 
 
 def test():
-    if not('quiz' in session) or int(session['quiz'] < 0):
+    if not('quiz' in session) or int(session['quiz']) < 0:
         return redirect(url_for('result'))
     else:
         if request.method == 'POST':

@@ -185,6 +185,26 @@ def get_quiz():
     close()
     return result 
 
+def check_answer(q_id, ans_text):
+    query = '''
+        SELECT questions.answer
+        FROM quiz_content, questions
+        WHERE quiz_content.id = ?
+        AND quiz_content.question_id = questions.id
+    '''
+    open()
+    cursor.execute(query, str(q_id))
+    result = cursor.fetchone()
+    close()
+
+    if result is None:
+        return False
+    else:
+        if result[0] == ans_text:
+            return True # Jawabann benar
+        else:
+            return False # Jawaban salah
+
 ## Entry Point untuk menjalankan program
 def main():
     clear_db()
