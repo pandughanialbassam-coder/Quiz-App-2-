@@ -41,17 +41,17 @@ def index():
 
 # === TEST UTILITY START - TEST PAGE ===
 def question_form(questions):
-    answer_list = [
-        question[2],
-        question[3],
-        question[4],
-        question[5],        
+    answers_list = [
+        questions[2],
+        questions[3],
+        questions[4],
+        questions[5],        
     ]
     shuffle(answers_list)
     return render_template(
         'test.html',
-        question=question[1],
-        quest_id=question[0],
+        question=questions[1],
+        quest_id=questions[0],
         answers_list = answers_list
     )
 
