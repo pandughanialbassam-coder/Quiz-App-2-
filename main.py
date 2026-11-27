@@ -63,7 +63,7 @@ def save_answers():
     session['total'] += 1
   
     if check_answer(quest_id, answer):
-        session['answer'] += 1
+        session['answers'] += 1
 
 
 def test():

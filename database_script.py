@@ -198,15 +198,15 @@ def check_answer(q_id, ans_text):
     close()
 
     if result is None:
-        print('test')
-        #return False
+        print('false')
+        return False
     else:
         if result[0] == ans_text:
-            print('test')
-            #return True # Jawabann benar
+            print('t')
+            return True # Jawabann benar
         else:
-            print('test')
-            #return False # Jawaban salah
+            print('false 2')
+            return False # Jawaban salah
 
 ## Entry Point untuk menjalankan program
 def main():
